@@ -132,7 +132,7 @@ Out of the box output writers
 * [RollingFileOutputWriter](https://github.com/jmxtrans/jmxtrans-agent/blob/master/src/main/java/org/jmxtrans/agent/RollingFileOutputWriter.java)
   * `fileName`: name of the file in which the collected metrics are stored. Optional, default value `jmxtrans-agent.data` (in JVM working dir, for example `$TOMCAT_HOME/bin`)
   * `maxFileSize`: Maximum file size in MB before file is rolled. Optional, default is `10`
-  * `maxBackupIndex`: Maximum number of files. Optional, default is `5
+  * `maxBackupIndex`: Maximum number of files. Optional, default is `5` 
 
 
 Output writers configuration support  an expression language based on property placeholders with the `{prop-name[:default-value]}` syntax (e.g. "`${graphite.host:2003}`").
