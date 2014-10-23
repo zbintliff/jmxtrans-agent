@@ -128,7 +128,7 @@ Out of the box output writers
 * [SummarizingFileOverwriterOutputWriter](https://github.com/jmxtrans/jmxtrans-agent/blob/master/src/main/java/org/jmxtrans/agent/SummarizingFileOverwriterOutputWriter.java): Similar to the `FileOverwriterOutputWriter` but displays "per minute" values for counters of type `counter`
 * [ConsoleOutputWriter](https://github.com/jmxtrans/jmxtrans-agent/blob/master/src/main/java/org/jmxtrans/agent/ConsoleOutputWriter.java): output metric values to `stdout`
 * [SummarizingConsoleOutputWriter](https://github.com/jmxtrans/jmxtrans-agent/blob/master/src/main/java/org/jmxtrans/agent/SummarizingConsoleOutputWriter.java): Similar to the `ConsoleOutputWriter` but displays "per minute" values for counters of type `counter`
-*  [RollingFileOutputWriter](https://github.mlbam.net/zbintlif/jmxtrans-agent-customwriters/blob/master/src/org/jmxtrans/agent/RollingFileOutputWriter.java)
+*  [RollingFileOutputWriter](https://github.com/zbintliff/jmxtrans-agent/blob/master/src/main/java/org/jmxtrans/agent/RollingFileOutputWriter.java)
   * `<fileName>`  is the file you want to write to. 
   * `<maxFileSize>` is the maximium size in mb before file rolls over.  It is optional.  Default value is 10mb and maximum file size is 10mb.
   * `<maxBackupIndex>` is the number of files you want to keep.  It is an optional value that defaults to 5.  When a file becomes larger the `<maxFileSize>` it then becomes `<fileName>.1` this continues up until `<maxbackupIndex>` (default `<fileName>.4`). Much like log4j rolling file appende
