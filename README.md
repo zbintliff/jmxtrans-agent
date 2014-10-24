@@ -171,40 +171,45 @@ application.activeSessions 0 1366199958
 ### Sample of FileOverwriterOutputWriter
 
 ```
-os.systemLoadAverage 1.27734375
-jvm.heapMemoryUsage.used 33436016
-jvm.heapMemoryUsage.committed 133365760
-jvm.nonHeapMemoryUsage.used 23623096
-jvm.nonHeapMemoryUsage.committed 24707072
-jvm.loadedClasses 3002
-jvm.thread 21
-tomcat.requestCount 27
-tomcat.requestCount 0
-tomcat.errorCount 0
-tomcat.errorCount 0
-tomcat.processingTime 881
-tomcat.processingTime 0
-tomcat.bytesSent 135816
-tomcat.bytesSent 0
-tomcat.bytesReceived 0
-tomcat.bytesReceived 0
-application.activeSessions 0
+[2014-10-24T15:46Z] os.systemLoadAverage 1.56494140625
+[2014-10-24T15:46Z] jvm.heapMemoryUsage.used 269985920
+[2014-10-24T15:46Z] jvm.heapMemoryUsage.committed 457703424
+[2014-10-24T15:46Z] jvm.nonHeapMemoryUsage.used 30605072
+[2014-10-24T15:46Z] jvm.nonHeapMemoryUsage.committed 31260672
+[2014-10-24T15:46Z] jvm.loadedClasses 4145
+[2014-10-24T15:46Z] jvm.thread 32
+[2014-10-24T15:46Z] tomcat.requestCount 13
+[2014-10-24T15:46Z] tomcat.requestCount 0
+[2014-10-24T15:46Z] tomcat.errorCount 1
+[2014-10-24T15:46Z] tomcat.errorCount 0
+[2014-10-24T15:46Z] tomcat.processingTime 738
+[2014-10-24T15:46Z] tomcat.processingTime 0
+[2014-10-24T15:46Z] tomcat.bytesSent 96661
+[2014-10-24T15:46Z] tomcat.bytesSent 0
+[2014-10-24T15:46Z] tomcat.bytesReceived 0
+[2014-10-24T15:46Z] tomcat.bytesReceived 0
+[2014-10-24T15:46Z] application.activeSessions 0
 ```
-Sample of RollingFileOutputWriter. Time is in GMT:
+### Sample of RollingFileOutputWriter.
 ```
-[May 16, 2014 1:19:44 PM] os.systemLoadAverage 1.35400390625
-[May 16, 2014 1:19:44 PM] jvm.heapMemoryUsage.used 246736032
-[May 16, 2014 1:19:44 PM] jvm.heapMemoryUsage.committed 389021696
-[May 16, 2014 1:19:44 PM] jvm.nonHeapMemoryUsage.used 30183280
-[May 16, 2014 1:19:44 PM] jvm.nonHeapMemoryUsage.committed 30867456
-[May 16, 2014 1:19:44 PM] jvm.loadedClasses 4161
-[May 16, 2014 1:19:44 PM] jvm.thread 25
-[May 16, 2014 1:19:44 PM] tomcat.requestCount 1
-[May 16, 2014 1:19:44 PM] tomcat.errorCount 0
-[May 16, 2014 1:19:44 PM] tomcat.processingTime 261
-[May 16, 2014 1:19:44 PM] tomcat.bytesSent 47142
-[May 16, 2014 1:19:44 PM] tomcat.bytesReceived 0
-[May 16, 2014 1:19:44 PM] application.activeSessions 0
+[2014-10-24T15:46Z] os.systemLoadAverage 1.56494140625
+[2014-10-24T15:46Z] jvm.heapMemoryUsage.used 269985920
+[2014-10-24T15:46Z] jvm.heapMemoryUsage.committed 457703424
+[2014-10-24T15:46Z] jvm.nonHeapMemoryUsage.used 30605072
+[2014-10-24T15:46Z] jvm.nonHeapMemoryUsage.committed 31260672
+[2014-10-24T15:46Z] jvm.loadedClasses 4145
+[2014-10-24T15:46Z] jvm.thread 32
+[2014-10-24T15:46Z] tomcat.requestCount 13
+[2014-10-24T15:46Z] tomcat.requestCount 0
+[2014-10-24T15:46Z] tomcat.errorCount 1
+[2014-10-24T15:46Z] tomcat.errorCount 0
+[2014-10-24T15:46Z] tomcat.processingTime 738
+[2014-10-24T15:46Z] tomcat.processingTime 0
+[2014-10-24T15:46Z] tomcat.bytesSent 96661
+[2014-10-24T15:46Z] tomcat.bytesSent 0
+[2014-10-24T15:46Z] tomcat.bytesReceived 0
+[2014-10-24T15:46Z] tomcat.bytesReceived 0
+[2014-10-24T15:46Z] application.activeSessions 0
 
 ```
 ## ResultNameStrategy
