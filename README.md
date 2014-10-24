@@ -98,6 +98,12 @@ Sample `jmxtrans-agent.xml` configuration file for Tomcat:
         <namePrefix>app_123456.servers.i876543.</namePrefix>
     </outputWriter>
     <outputWriter class="org.jmxtrans.agent.ConsoleOutputWriter"/>
+   <outputWriter class="org.jmxtrans.agent.RollingFileOutputWriter">
+      <fileName>rollingJMXOutputFile</fileName>
+      <maxFileSize>10</maxFileSize>
+      <maxBackupIndex>4</maxBackupIndex>
+   </outputWriter>
+       
     <collectIntervalInSeconds>20</collectIntervalInSeconds>
 </jmxtrans-agent>
 ```
@@ -122,6 +128,10 @@ Out of the box output writers
 * [SummarizingFileOverwriterOutputWriter](https://github.com/jmxtrans/jmxtrans-agent/blob/master/src/main/java/org/jmxtrans/agent/SummarizingFileOverwriterOutputWriter.java): Similar to the `FileOverwriterOutputWriter` but displays "per minute" values for counters of type `counter`
 * [ConsoleOutputWriter](https://github.com/jmxtrans/jmxtrans-agent/blob/master/src/main/java/org/jmxtrans/agent/ConsoleOutputWriter.java): output metric values to `stdout`
 * [SummarizingConsoleOutputWriter](https://github.com/jmxtrans/jmxtrans-agent/blob/master/src/main/java/org/jmxtrans/agent/SummarizingConsoleOutputWriter.java): Similar to the `ConsoleOutputWriter` but displays "per minute" values for counters of type `counter`
+*  [RollingFileOutputWriter](https://github.com/zbintliff/jmxtrans-agent/blob/master/src/main/java/org/jmxtrans/agent/RollingFileOutputWriter.java)
+  * `<fileName>`  is the file you want to write to. 
+  * `<maxFileSize>` is the maximium size in mb before file rolls over.  It is optional.  Default value is 10mb and maximum file size is 10mb.
+  * `<maxBackupIndex>` is the number of files you want to keep.  It is an optional value that defaults to 5.  When a file becomes larger the `<maxFileSize>` it then becomes `<fileName>.1` this continues up until `<maxbackupIndex>` (default `<fileName>.4`). Much like log4j rolling file appendender
 
 Output writers configuration support  an expression language based on property placeholders with the `{prop-name[:default-value]}` syntax (e.g. "`${graphite.host:2003}`").
 
@@ -178,7 +188,23 @@ tomcat.bytesReceived 0
 tomcat.bytesReceived 0
 application.activeSessions 0
 ```
+Sample of RollingFileOutputWriter. Time is in GMT:
+```
+[May 16, 2014 1:19:44 PM] os.systemLoadAverage 1.35400390625
+[May 16, 2014 1:19:44 PM] jvm.heapMemoryUsage.used 246736032
+[May 16, 2014 1:19:44 PM] jvm.heapMemoryUsage.committed 389021696
+[May 16, 2014 1:19:44 PM] jvm.nonHeapMemoryUsage.used 30183280
+[May 16, 2014 1:19:44 PM] jvm.nonHeapMemoryUsage.committed 30867456
+[May 16, 2014 1:19:44 PM] jvm.loadedClasses 4161
+[May 16, 2014 1:19:44 PM] jvm.thread 25
+[May 16, 2014 1:19:44 PM] tomcat.requestCount 1
+[May 16, 2014 1:19:44 PM] tomcat.errorCount 0
+[May 16, 2014 1:19:44 PM] tomcat.processingTime 261
+[May 16, 2014 1:19:44 PM] tomcat.bytesSent 47142
+[May 16, 2014 1:19:44 PM] tomcat.bytesReceived 0
+[May 16, 2014 1:19:44 PM] application.activeSessions 0
 
+```
 ## ResultNameStrategy
 
 The `ResultNameStrategy` is the component in charge of building the metric name. The default implementation uses the `resultAlias`  if provided
