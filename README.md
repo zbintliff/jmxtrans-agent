@@ -134,7 +134,6 @@ Out of the box output writers
   * `<maxFileSize>` is the maximium size in mb before file rolls over.  It is optional.  Default value is 10mb and maximum file size is 10mb.
   * `<maxBackupIndex>` is the number of files you want to keep.  It is an optional value that defaults to 5.  When a file becomes larger the `<maxFileSize>` it then becomes `<fileName>.1` this continues up until `<maxbackupIndex>` (default `<fileName>.4`). Much like log4j rolling file appendender
 
-
 Output writers configuration support  an expression language based on property placeholders with the `{prop-name[:default-value]}` syntax (e.g. "`${graphite.host:2003}`").
 
 The `default-value` is optional. An exception is raised if no default value is defined and the property placeholder is not found.
