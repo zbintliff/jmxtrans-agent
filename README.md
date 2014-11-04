@@ -98,6 +98,12 @@ Sample `jmxtrans-agent.xml` configuration file for Tomcat:
         <namePrefix>app_123456.servers.i876543.</namePrefix>
     </outputWriter>
     <outputWriter class="org.jmxtrans.agent.ConsoleOutputWriter"/>
+   <outputWriter class="org.jmxtrans.agent.RollingFileOutputWriter">
+      <fileName>rollingJMXOutputFile</fileName>
+      <maxFileSize>10</maxFileSize>
+      <maxBackupIndex>4</maxBackupIndex>
+   </outputWriter>
+       
     <collectIntervalInSeconds>20</collectIntervalInSeconds>
 </jmxtrans-agent>
 ```
@@ -127,6 +133,7 @@ Out of the box output writers
   * `fileName`: name of the file in which the collected metrics are stored. Optional, default value `jmxtrans-agent.data` (in JVM working dir, for example `$TOMCAT_HOME/bin`)
   * `maxFileSize`: Maximum file size in MB before file is rolled. Optional, default is `10`
   * `maxBackupIndex`: Maximum number of files. Optional, default is `5
+
 
 Output writers configuration support  an expression language based on property placeholders with the `{prop-name[:default-value]}` syntax (e.g. "`${graphite.host:2003}`").
 
